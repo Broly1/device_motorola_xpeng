@@ -1,3 +1,9 @@
 # HAL Services
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.berlna                                         u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.berlna                                     u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/init\.oem\.(fingerprint2|fingerprint\.overlay)\.sh                                    u:object_r:vendor_init_fingerprint_exec:s0
+/(vendor|system/vendor)/bin/hw/egis_ident                                                                        u:object_r:hal_fingerprint_default_exec:s0
+
+# Fingerprint
+/(mnt/vendor)/persist/egis(/.*)?   u:object_r:fingerprint_vendor_data_file:s0
+/sys/devices/soc/0.et320(/.*)?     u:object_r:vendor_sysfs_fingerprint:s0
