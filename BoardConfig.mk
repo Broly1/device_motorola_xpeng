@@ -61,5 +61,8 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 # Security
 VENDOR_SECURITY_PATCH := 2023-01-01
 
+# SELinux
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # inherit from the proprietary version
 include vendor/motorola/berlna/BoardConfigVendor.mk

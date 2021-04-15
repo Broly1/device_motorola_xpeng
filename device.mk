@@ -31,7 +31,10 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Inherit from motorola sm7325-common
 $(call inherit-product, device/motorola/sm7325-common/sm7325.mk)
 
-# Overlay
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
 PRODUCT_PACKAGES += \
     FrameworksResBerlna \
     LineageSystemUIBerlna \
@@ -73,6 +76,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
     $(LOCAL_PATH)/media/media_profiles_yupik_v0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_yupik_v0.xml \
     $(LOCAL_PATH)/media/media_profiles_yupik_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_yupik_v1.xml
+
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.lights-service.berlna
 
 # NFC
 PRODUCT_PACKAGES += \
