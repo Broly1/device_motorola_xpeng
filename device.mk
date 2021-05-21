@@ -38,6 +38,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     FrameworksResBerlna \
     LineageSystemUIBerlna \
+    SettingsProviderResBerlna \
     SystemUIResBerlna
 
 # Audio
