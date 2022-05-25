@@ -14,6 +14,8 @@ TARGET_BOOTLOADER_BOARD_NAME := xpeng
 
 # HIDL
 DEVICE_MANIFEST_YUPIK_FILES += $(DEVICE_PATH)/manifest_xpeng.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/configs/manifests/device_framework_compatibility_matrix.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hab.product=xpeng

@@ -28,11 +28,11 @@ $(call inherit-product, device/motorola/sm7325-common/sm7325.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_PACKAGES += \
     FrameworksResXpeng \
-    LineageSystemUIXpeng \
+    SystemUIXpeng \
     SettingsProviderResXpeng \
     SystemUIResXpeng
 
@@ -70,10 +70,6 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 PRODUCT_PACKAGES += \
     init.recovery.xpeng.rc \
     load_touch.sh
-
-# Lineage Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xpeng
 
 # Media
 PRODUCT_COPY_FILES += \

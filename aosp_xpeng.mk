@@ -12,9 +12,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/motorola/xpeng/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_xpeng
+PRODUCT_NAME := aosp_xpeng
 PRODUCT_DEVICE := xpeng
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
