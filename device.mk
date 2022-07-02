@@ -67,6 +67,11 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/*.rc),\
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
 
+# Init (recovery)
+PRODUCT_PACKAGES += \
+    init.recovery.berlna.rc \
+    load_touch.sh
+
 # Lineage Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.berlna

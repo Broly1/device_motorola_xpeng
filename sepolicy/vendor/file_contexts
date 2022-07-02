@@ -7,3 +7,6 @@
 # Fingerprint
 /(mnt/vendor)/persist/egis(/.*)?   u:object_r:fingerprint_vendor_data_file:s0
 /sys/devices/soc/0.et320(/.*)?     u:object_r:vendor_sysfs_fingerprint:s0
+
+# Vendor init scripts
+/(vendor|system/vendor)/bin/load_touch\.sh                                                 u:object_r:vendor_qti_init_shell_exec:s0
