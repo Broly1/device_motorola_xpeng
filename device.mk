@@ -51,7 +51,6 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xpeng \
     com.motorola.hardware.biometric.fingerprint@1.0.vendor
 
 $(foreach f,$(wildcard $(LOCAL_PATH)/configs/idc/*.idc),\
