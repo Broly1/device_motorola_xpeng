@@ -827,7 +827,6 @@ vendor/lib64/libGPQTEEC_vendor.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libGPTEE_vendor.so
-vendor/lib64/liboemcrypto.so
 vendor/lib64/libops.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
