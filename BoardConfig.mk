@@ -48,9 +48,6 @@ endif
 BOARD_MOT_DP_GROUP_SIZE := 7916748800
 BOARD_SUPER_PARTITION_SIZE := 15854469120
 
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/double_click"
-
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
