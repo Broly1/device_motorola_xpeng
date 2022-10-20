@@ -442,7 +442,7 @@ vendor/lib64/vendor.egistec.hardware.fingerprint@2.0.so
 
 # MotCamera3
 product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
-product/priv-app/MotCamera3/MotCamera3.apk;OVERRIDES=Camera2|fe46dccdccfd08bc416fabc97662df3c15440aa6
+product/priv-app/MotCamera3/MotCamera3.apk;OVERRIDES=Aperture|fe46dccdccfd08bc416fabc97662df3c15440aa6
 system_ext/etc/public.libraries-motocamera.txt
 system_ext/framework/com.motorola.androidx.camera.extensions.jar
 system_ext/lib/libmcf_native_window_helper.motocamera.so
