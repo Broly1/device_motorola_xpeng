@@ -29,6 +29,7 @@ $(call inherit-product, device/motorola/sm7325-common/sm7325.mk)
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResXpeng \
+    LineageApertureAppXpeng \
     LineagePlatformXpeng \
     LineageSystemUIXpeng \
     SettingsProviderResXpeng \
