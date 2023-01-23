@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.lights-service.berlna",
+    name: "android.hardware.lights-service.xpeng",
     relative_install_path: "hw",
-    init_rc: ["android.hardware.lights.berlna.rc"],
-    vintf_fragments: ["android.hardware.lights.berlna.xml"],
+    init_rc: ["android.hardware.lights.xpeng.rc"],
+    vintf_fragments: ["android.hardware.lights.xpeng.xml"],
     vendor: true,
     shared_libs: [
         "libbase",

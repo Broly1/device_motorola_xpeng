@@ -1,11 +1,11 @@
 //
-// Copyright (C) 2022 The LineageOS Project
+// Copyright (C) 2022-2023 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 cc_library_shared {
-    name: "sensors.berlna",
+    name: "sensors.xpeng",
     defaults: ["hidl_defaults"],
     srcs: [
         "Sensor.cpp",
@@ -29,7 +29,7 @@ cc_library_shared {
         "android.hardware.sensors@2.X-multihal",
     ],
     cflags: [
-        "-DLOG_TAG=\"sensors.berlna\"",
+        "-DLOG_TAG=\"sensors.xpeng\"",
     ],
     vendor: true,
 }

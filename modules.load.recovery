@@ -1,9 +1,7 @@
-camera.ko
 msm_drm.ko
-mmi_info.ko
-mmi_annotate.ko
-sensors_class.ko
 mmi_relay.ko
+sensors_class.ko
 touchscreen_mmi.ko
+mmi_annotate.ko
+mmi_info.ko
 nova_0flash_mmi.ko
-aw8695.ko

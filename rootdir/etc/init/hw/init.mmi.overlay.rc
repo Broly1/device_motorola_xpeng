@@ -4,28 +4,28 @@ on early-init && property:ro.bootmode=mot-factory
     insmod /vendor/lib/modules/moto_f_usbnet.ko
 
 on early-init
-   exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/${ro.vendor.mot.gki.path} mmi_annotate mmi_info mmi_relay
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/${ro.vendor.mot.gki.path} mmi_annotate mmi_info mmi_relay
 
 on early-init
-   insmod /vendor/lib/modules/bm_adsp_ulog.ko
-   insmod /vendor/lib/modules/mmi_charger.ko
-   insmod /vendor/lib/modules/qti_glink_charger.ko
-   insmod /vendor/lib/modules/aw882xx_k504.ko
-   insmod /vendor/lib/modules/mmi_sys_temp.ko
-   insmod /vendor/lib/modules/wl2864c.ko
-   insmod /vendor/lib/modules/goodix_mmi.ko
-   insmod /vendor/lib/modules/camera.ko
-   insmod /vendor/lib/modules/aw8695.ko
-   insmod /vendor/lib/modules/cci_intf.ko
-   insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
-   insmod /vendor/lib/modules/5.4-gki/camera.ko
-   insmod /vendor/lib/modules/5.4-gki/aw8695.ko
-   start vendor.mmi_modules
+    insmod /vendor/lib/modules/aw882xx_k504.ko
+    insmod /vendor/lib/modules/bm_adsp_ulog.ko
+    insmod /vendor/lib/modules/camera.ko
+    insmod /vendor/lib/modules/cci_intf.ko
+    insmod /vendor/lib/modules/fpc1020_mmi.ko
+    insmod /vendor/lib/modules/goodix_fod_mmi.ko
+    insmod /vendor/lib/modules/leds_aw99703.ko
+    insmod /vendor/lib/modules/leds_lm3697.ko
+    insmod /vendor/lib/modules/mmi_charger.ko
+    insmod /vendor/lib/modules/mmi_sys_temp.ko
+    insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
+    insmod /vendor/lib/modules/qti_glink_charger.ko
+    insmod /vendor/lib/modules/rbs_fps_mmi.ko
+    insmod /vendor/lib/modules/wl2866d.ko
 
 on post-fs
     # Sensors
-    chown system system /sys/devices/platform/soc/a94000.spi/spi_master/spi0/spi0.0/touchscreen/NVT-ts/double_tap_enabled
-    chown system system /sys/devices/platform/soc/a94000.spi/spi_master/spi0/spi0.0/touchscreen/NVT-ts/double_tap_pressed
+    chown system system /sys/devices/platform/soc/998000.spi/spi_master/spi0/spi0.0/touchscreen/NVT-ts/double_tap_enabled
+    chown system system /sys/devices/platform/soc/998000.spi/spi_master/spi0/spi0.0/touchscreen/NVT-ts/double_tap_pressed
 
 on post-fs-data
     mkdir /mnt/vendor/persist/tof 0755 vendor_tcmd camera
@@ -42,7 +42,6 @@ on post-fs-data
     # Param updater data for various modules
     mkdir /data/vendor/param 0775 system system
     mkdir /data/vendor/tzstorage/goodix 0770 system system
-    exec_start vendor.ident-fps-overlay-sh
 
 on early-boot
     # Goodix fingerprint
@@ -50,52 +49,65 @@ on early-boot
     chmod 0664 /dev/goodix_fp
 
 on boot
+    chmod 0664 /mnt/vendor/persist/factory/audio/aw_cali.bin
+    mkdir /data/vendor/gf_data 0770 system system
+    mkdir /mnt/vendor/persist/goodix 0770 system system
+
     #change adsp pmic test command file access permission
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
-    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/double_click
-    chmod 0660 /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/double_click
-    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/single_click
-    chmod 0660 /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/single_click
-   # Set adaptive charging perms for HAL
+    # Set adaptive charging perms for HAL
     chown system system /sys/module/qpnp_adaptive_charge/parameters/upper_limit
     chown system system /sys/module/qpnp_adaptive_charge/parameters/lower_limit
+    # allow TCMD to access cci
+    chmod 0660 /dev/cci_intf
+    chown system camera /dev/cci_intf
+    # touch api
+    chown system system /sys/class/touchscreen/primary/interpolation
+    chmod 0660 /sys/class/touchscreen/primary/interpolation
+    chown system system /sys/class/touchscreen/primary/first_filter
+    chmod 0660 /sys/class/touchscreen/primary/first_filter
+    chown system system /sys/class/touchscreen/primary/edge
+    chmod 0660 /sys/class/touchscreen/primary/edge
     # touch screen calibration file
     mkdir /mnt/vendor/persist/touch
     chown vendor_tcmd system /mnt/vendor/persist/touch
     chmod 0775 /mnt/vendor/persist/touch
 
 service capsense_reset /system/vendor/bin/capsense_reset
-   class core
-   user system
-   group system input
-   disabled
+    class core
+    user system
+    group system input
+    disabled
 
 on property:sys.boot_completed=1
     start capsense_reset
 
-on property:persist.vendor.paramfile.parse_panel=1
-    write /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_parse_para "1"
-
-service vendor.ident-fps-overlay-sh /vendor/bin/init.oem.fingerprint.overlay.sh
-    class core
-    user root
-    group drmrpc system
-    oneshot
-    disabled
-
-service vendor.ident-fps-sh /vendor/bin/init.oem.fingerprint.sh
-    class core
-    user root
-    group drmrpc system
-    oneshot
-    disabled
-
-service egis_ident /vendor/bin/egis_ident
+service egis_ident /vendor/bin/hw/egis_ident
     class late_start
     user system
     group system
     oneshot
     disabled
+
+service fpc_ident /vendor/bin/hw/fpc_ident
+    class late_start
+    user system
+    group system
+    oneshot
+    disabled
+
+service gf_ident /vendor/bin/hw/goodix_ident
+    class late_start
+    user system
+    group system input uhid
+    oneshot
+    disabled
+
+service vendor.hal-fps-sh /vendor/bin/init.oem.fingerprint2.sh
+    class late_start
+    user root
+    group system
+    oneshot

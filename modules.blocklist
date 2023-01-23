@@ -98,9 +98,11 @@ blocklist utags
 # Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Motorola product module block list
-#
-
 blocklist goodix_fod_mmi
-blocklist ets_fps_mmi
-blocklist camera
-blocklist aw8695
+blocklist fpc1020_mmi
+blocklist rbs_fps_mmi
+blocklist watchdogtest
+blocklist moto_f_usbnet
+blocklist leds_aw99703
+blocklist leds_lm3697
+#

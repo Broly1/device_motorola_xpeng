@@ -1,5 +1,5 @@
 # Bluetooth
-bluetooth.device.default_name=motorola edge (2021)
+bluetooth.device.default_name=Motorola g200 5G
 
 # Camera
 persist.vendor.camera.physical.num=4
