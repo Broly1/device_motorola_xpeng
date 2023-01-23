@@ -18,11 +18,9 @@ INSTALLED_KERNEL_TARGET := $(PRODUCT_OUT)/kernel
 recovery_uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery.cpio
 
 RECOVERY_FIRMWARE_TARGETS := \
-    aw8695_haptic.bin \
-    aw8695_rtp.bin \
-    mp-novatek_ts-NT36675-21061805-603a-berlna.bin \
-    novatek_ts-NT36675-21042101-603a-berlna-evt.bin \
-    novatek_ts-NT36675-21061805-603a-berlna.bin
+    NT36xxx_MP_Setting_Criteria_6044.csv \
+    mp_novatek_ts-NT36675-21101302-6044-xpeng.bin \
+    novatek_ts-NT36675-21101302-6044-xpeng.bin
 
 INSTALLED_RECOVERY_FIRMWARE_TARGETS := $(RECOVERY_FIRMWARE_TARGETS:%=$(TARGET_RECOVERY_ROOT_OUT)/vendor/firmware/%)
 $(INSTALLED_RECOVERY_FIRMWARE_TARGETS): $(INSTALLED_KERNEL_TARGET)

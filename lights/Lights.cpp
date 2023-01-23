@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.lights-service.berlna"
+#define LOG_TAG "android.hardware.lights-service.xpeng"
 
 #include "Lights.h"
 #include <android-base/file.h>
