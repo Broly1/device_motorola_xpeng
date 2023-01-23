@@ -1,5 +1,0 @@
-runtime_resource_overlay {
-    name: "SettingsProviderResBerlin",
-    sdk_version: "current",
-    vendor: true
-}
