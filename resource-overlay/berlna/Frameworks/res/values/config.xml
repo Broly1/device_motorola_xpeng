@@ -127,11 +127,10 @@
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">
-        M 0,0
-        h -35
-		v 90
-		h 70
-		v -90
+        M -50,0
+        L 50,0
+		L 50,115
+		L -50,115
 		Z
 	</string>
 
@@ -288,7 +287,7 @@
          the framework from using higher refresh rates, even if display modes with higher refresh
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
-    <integer name="config_defaultPeakRefreshRate">60</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
 
     <!-- MMS user agent string -->
     <string name="config_mms_user_agent" translatable="false">motorolaedge</string>
