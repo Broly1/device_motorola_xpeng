@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from S1RGS32.53-18-22-11 2367ac release-keys.
+# All unpinned blobs below are extracted from RETUS - S1RMS32.48-18-11-2-19 5e5bb release-keys.
 
 # ACDB Data
 vendor/etc/acdbdata/nn_ns_models/candidate__2.7.1.31__3.0.0__eai_1.10_enpu1.pmd
@@ -16,10 +16,8 @@ vendor/etc/acdbdata/Speaker_cal.acdb
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Audio firmware
-vendor/firmware/cs35l41-dsp1-spk-cali.bin
-vendor/firmware/cs35l41-dsp1-spk-cali.wmfw
-vendor/firmware/cs35l41-dsp1-spk-prot.bin
-vendor/firmware/cs35l41-dsp1-spk-prot.wmfw
+vendor/firmware/aw882xx_afe_params.bin
+vendor/firmware/aw882xx_spk_reg.bin
 
 # Audio libraries
 vendor/etc/maxx_conf.ini
@@ -27,10 +25,13 @@ vendor/etc/maxx_default.mps
 vendor/lib/libAndroidAlgSys.so
 vendor/lib/libacdbloader.so
 vendor/lib/libc++_shared.so
+vendor/lib/libMAM2_3-AlgFX-Coretex_A9.so
 vendor/lib64/libacdbloader.so
 
 # Audio - soundfx
 vendor/lib/soundfx/libmaxxeffect-cembedded.so
+vendor/lib/soundfx/libbc360.so
+vendor/lib64/soundfx/libbc360.so
 
 # Camera
 vendor/etc/pwr/PowerFeatureConfig.xml
@@ -85,7 +86,6 @@ vendor/lib/libmmcamera_pdpc.so
 vendor/lib/libmot_afd.so
 vendor/lib/libmot_chi_desktop_helper.so
 vendor/lib/libmot_engine_settings.so
-vendor/lib/libmotoisdataqueue.so
 vendor/lib/libmpbase.so
 vendor/lib/libofflinedump.so
 vendor/lib/libofflinelog.so
@@ -124,9 +124,9 @@ vendor/lib64/com.qualcomm.mcx.linearmapper.so
 vendor/lib64/com.qualcomm.mcx.policy.mfl.so
 vendor/lib64/com.qualcomm.qti.mcx.usecase.extension.so
 vendor/lib64/libarcsoft_distortion_correction.so
+vendor/lib64/libarcsoft_dual_sat.so
+vendor/lib64/libarcsoft_dual_zoomtranslator.so
 vendor/lib64/libarcsoft_portrait_distortion_correction.so
-vendor/lib64/libarcsoft_triple_sat.so
-vendor/lib64/libarcsoft_triple_zoomtranslator.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libbitmlenginev2.so
 vendor/lib64/libc2d_helper.so
@@ -145,6 +145,8 @@ vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
 vendor/lib64/libchilog.so
 vendor/lib64/libcom.qti.chinodeutils.so
+vendor/lib64/libdualcam_optical_zoom_control.so
+vendor/lib64/libdualcam_video_optical_zoom.so
 vendor/lib64/libipebpsstriping.so
 vendor/lib64/libipebpsstriping170.so
 vendor/lib64/libmmcamera_bestats.so
@@ -158,7 +160,6 @@ vendor/lib64/libmmcamera_pdpc.so
 vendor/lib64/libmot_afd.so
 vendor/lib64/libmot_chi_desktop_helper.so
 vendor/lib64/libmot_engine_settings.so
-vendor/lib64/libmotoisdataqueue.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libofflinedump.so
 vendor/lib64/libofflinelog.so
@@ -168,8 +169,6 @@ vendor/lib64/libpowercore.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libsynx.so
 vendor/lib64/libthreadutils.so
-vendor/lib64/libtriplecam_optical_zoom_control.so
-vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvidhance.so
 vendor/lib64/libvidhance_active_ois.so
@@ -298,19 +297,20 @@ vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
 vendor/lib64/camera/components/libdepthmapwrapper_secure.so
 
 # Camera - eeprom
-vendor/lib/camera/com.mot.eeprom.mot_gt24p64b_ov08a10_eeprom.so
-vendor/lib/camera/com.mot.eeprom.mot_gt24p64b_ov16a10_eeprom.so
 vendor/lib/camera/com.mot.eeprom.mot_gt24p64e_ov32b40_eeprom.so
 vendor/lib/camera/com.mot.eeprom.mot_gt24p64e_s5khm2_eeprom.so
-vendor/lib64/camera/com.mot.eeprom.mot_gt24p64b_ov08a10_eeprom.so
-vendor/lib64/camera/com.mot.eeprom.mot_gt24p64b_ov16a10_eeprom.so
+vendor/lib/camera/com.mot.eeprom.mot_ov02b1b_otp.so
+vendor/lib/camera/com.mot.eeprom.mot_s5k4h7_otp.so
 vendor/lib64/camera/com.mot.eeprom.mot_gt24p64e_ov32b40_eeprom.so
 vendor/lib64/camera/com.mot.eeprom.mot_gt24p64e_s5khm2_eeprom.so
+vendor/lib64/camera/com.mot.eeprom.mot_ov02b1b_otp.so
+vendor/lib64/camera/com.mot.eeprom.mot_s5k4h7_otp.so
 
 # Camera - etc
-vendor/etc/camera/aec_golden_tele.bin
+vendor/etc/camera/aec_golden_depth.bin
+vendor/etc/camera/aec_golden_wide.bin
 vendor/etc/camera/arcsoft_calibration_u_dc.bin
-vendor/etc/camera/dual_golden_tele.bin
+vendor/etc/camera/dual_golden_depth.bin
 vendor/etc/camera/dual_golden_wide.bin
 vendor/etc/camera/mot_engine_config.bin
 vendor/etc/camera/vidhance_calibration
@@ -384,60 +384,65 @@ vendor/lib/motorola.hardware.camera.desktop@2.0.so
 vendor/lib64/motorola.hardware.camera.desktop@1.0.so
 vendor/lib64/motorola.hardware.camera.desktop@2.0.so
 
-# Camera - OIS
-vendor/firmware/mot_bu63169.coeff
-vendor/firmware/mot_bu63169.prog
-
 # Camera - sensor
-vendor/lib/camera/com.qti.sensor.mot_ov08a10.so
-vendor/lib/camera/com.qti.sensor.mot_ov16a10.so
+vendor/lib/camera/com.qti.sensor.mot_ov02b1b.so
 vendor/lib/camera/com.qti.sensor.mot_ov32b40.so
+vendor/lib/camera/com.qti.sensor.mot_s5k4h7.so
 vendor/lib/camera/com.qti.sensor.mot_s5khm2.so
-vendor/lib64/camera/com.qti.sensor.mot_ov08a10.so
-vendor/lib64/camera/com.qti.sensor.mot_ov16a10.so
+vendor/lib64/camera/com.qti.sensor.mot_ov02b1b.so
 vendor/lib64/camera/com.qti.sensor.mot_ov32b40.so
+vendor/lib64/camera/com.qti.sensor.mot_s5k4h7.so
 vendor/lib64/camera/com.qti.sensor.mot_s5khm2.so
 
 # Camera - sensormodule
-vendor/lib/camera/com.qti.sensormodule.mot_berlin_ov08a10_qtech.bin
-vendor/lib/camera/com.qti.sensormodule.mot_berlin_ov16a10_qtech.bin
-vendor/lib/camera/com.qti.sensormodule.mot_berlin_ov32b40_qtech.bin
-vendor/lib/camera/com.qti.sensormodule.mot_berlin_s5khm2_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_berlin_ov08a10_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_berlin_ov16a10_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_berlin_ov32b40_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_berlin_s5khm2_qtech.bin
+vendor/lib/camera/com.qti.sensormodule.mot_berlna_ov02b1b_sunwin.bin
+vendor/lib/camera/com.qti.sensormodule.mot_berlna_ov32b40_qtech.bin
+vendor/lib/camera/com.qti.sensormodule.mot_berlna_s5k4h7_qtech.bin
+vendor/lib/camera/com.qti.sensormodule.mot_berlna_s5khm2_qtech.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_berlna_ov02b1b_sunwin.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_berlna_ov32b40_qtech.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_berlna_s5k4h7_qtech.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_berlna_s5khm2_qtech.bin
 
 # Camera - tuned
 vendor/lib/camera/com.qti.tuned.default.bin
-vendor/lib/camera/com.qti.tuned.mot_berlin_ov08a10.bin
-vendor/lib/camera/com.qti.tuned.mot_berlin_ov16a10.bin
-vendor/lib/camera/com.qti.tuned.mot_berlin_ov32b40.bin
-vendor/lib/camera/com.qti.tuned.mot_berlin_s5khm2.bin
+vendor/lib/camera/com.qti.tuned.mot_berlna_ov02b1b.bin
+vendor/lib/camera/com.qti.tuned.mot_berlna_ov32b40.bin
+vendor/lib/camera/com.qti.tuned.mot_berlna_s5k4h7.bin
+vendor/lib/camera/com.qti.tuned.mot_berlna_s5khm2.bin
 vendor/lib64/camera/com.qti.tuned.default.bin
-vendor/lib64/camera/com.qti.tuned.mot_berlin_ov08a10.bin
-vendor/lib64/camera/com.qti.tuned.mot_berlin_ov16a10.bin
-vendor/lib64/camera/com.qti.tuned.mot_berlin_ov32b40.bin
-vendor/lib64/camera/com.qti.tuned.mot_berlin_s5khm2.bin
+vendor/lib64/camera/com.qti.tuned.mot_berlna_ov02b1b.bin
+vendor/lib64/camera/com.qti.tuned.mot_berlna_ov32b40.bin
+vendor/lib64/camera/com.qti.tuned.mot_berlna_s5k4h7.bin
+vendor/lib64/camera/com.qti.tuned.mot_berlna_s5khm2.bin
 
 # Display calibration data
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_csot_1080p_dsc_667.xml
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_visionox_1080p_dsc_667.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_tianma_1080p_dsc_678.xml
 vendor/etc/qdcm_calib_data_nt36672e_60_Hz_fhd_plus_video_mode_panel_without_DSC.xml
 vendor/etc/qdcm_calib_data_nt36672e_fhd_plus_120Hz_Video_panel.xml
 vendor/etc/qdcm_calib_data_nt36672e_fhd_plus_144Hz_video_panel.xml
 
 # Fingerprint
-vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.0.so
+
+# Fingerprint (goodix)
+vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@3.0.so
 
+# Fingerprint (egistec)
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-ets
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets2.rc
+vendor/etc/init/init.ets.rc
+vendor/lib64/libets_fp_et5.so
+vendor/lib64/libets_teeclient.so
+vendor/lib64/vendor.egistec.hardware.fingerprint@2.0.so
+
 # MotCamera3
 product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
-product/priv-app/MotCamera3/MotCamera3.apk;OVERRIDES=Camera2|811125825e5a66e8c84a956165c814d604b55a7f
+product/priv-app/MotCamera3/MotCamera3.apk;OVERRIDES=Camera2|fe46dccdccfd08bc416fabc97662df3c15440aa6
 system_ext/etc/public.libraries-motocamera.txt
 system_ext/framework/com.motorola.androidx.camera.extensions.jar
 system_ext/lib/libmcf_native_window_helper.motocamera.so
@@ -451,12 +456,6 @@ product/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml
 system_ext/etc/permissions/com.motorola.androidx.camera.extensions.xml
 
 # MotCamera3 - libs
-product/lib64/libFNVfbEngineHAL.so|a7365d9e7d728df8d4ad6ecfba07961fcf924d75
-product/lib64/libSNPE.so|ddcec410b42f85808bb8b0d8359c7a6490a934de
-product/lib64/libSuperSensorCPU_v05052021.so|22378fd888fc13dac8f46a250f101dbcdb6d44bc
-product/lib64/libSuperSensorProcessorCWrapper_v2.so|7e66994ee9b8c7d637afb58e0e341e5c94cf23a2
-product/lib64/libSuperSensorProcessor_v05052021.so|2c9204b230bddd089070e5b9238c85b9fe6d94f8
-product/lib64/libSuperSensor_v05052021.so|dfbfc247087c8f9dfc86401918c8026b06eaf4a5
 product/lib64/libarcsoft_dualcam_refocus.so|cde6916a8b3c443e332c23e14229860a0e37aef0
 product/lib64/libarcsoft_frc.so|dab92e6bd066b44bb557f24c9cb2c587df2aab46
 product/lib64/libarcsoft_hdr_scbokeh_image.so|88391745e78f0234aa2514615ee8b3d76454d7e0
@@ -468,12 +467,13 @@ product/lib64/libarcsoft_superportrait.so|428f537e4995d8ef6138f118159b319c9cc8e9
 product/lib64/libas-super-slow-motion.so|1a822eb3a844d387f751fc60136c919f1d5289d0
 product/lib64/libbarhopper_v3.so|01401953109a122c281f7e625cd6099433b34bb7
 product/lib64/libbg-postproc-jni.so|2de65eaabd096ec5e0eac2dfb92158fe9878682c
-product/lib64/libc++.so|e8707820517ab7713b8ca6ac4462361e00629c26
-product/lib64/libc++_shared.so|52beb16998338f6406e30a33b3066cd6cd457074
 product/lib64/libcamerax_extension_jni.so|484258aae91d462443bfc1627568522fc49a806c
+product/lib64/libc++_shared.so|52beb16998338f6406e30a33b3066cd6cd457074
+product/lib64/libc++.so|e8707820517ab7713b8ca6ac4462361e00629c26
 product/lib64/libdoc-util.so|5cae17df39eed003f3b751b6ef3e1330faa0cea1
 product/lib64/libdynamic_depth.so|515f03132a086f15c565dd89b192ede5eeca7e29
 product/lib64/libfn-beauty-vfb-base.so|2116a9a2f2ff5e49e575e00985c3e18d295cdfbc
+product/lib64/libFNVfbEngineHAL.so|a7365d9e7d728df8d4ad6ecfba07961fcf924d75
 product/lib64/libfoundation.so|ffb388c6c8876cebf4614a0e5ae31c482803dd91
 product/lib64/libgg-dynamic_depth.so|ae152e43f07bbd2b037d15b95d20c95451bfe5af
 product/lib64/libgg-tensorflow-lite.so|08df2fdef345d48f8fecc5edc75c5e2bbb36bc08
@@ -494,11 +494,16 @@ product/lib64/libmpbase.so|07021c39abbc5c8538f6df1876a3eb3015ff9c2a
 product/lib64/libqc-snpe.so|3080e7127cf3fb3efc5e5da1ebe9715923d257e2
 product/lib64/libsmart_ppt.so|bc562289e07bb64095effd8ed473d822272b53b9
 product/lib64/libsmudge_detect.so|915e44b5013096b846b87c539d92200a0b048d23
-product/lib64/libtensorflowlite.so|17f94dc427220788db8f10d658d3a330488ac7d6
+product/lib64/libSNPE.so|ddcec410b42f85808bb8b0d8359c7a6490a934de
+product/lib64/libSuperSensorCPU_v05052021.so|22378fd888fc13dac8f46a250f101dbcdb6d44bc
+product/lib64/libSuperSensorProcessorCWrapper_v2.so|7e66994ee9b8c7d637afb58e0e341e5c94cf23a2
+product/lib64/libSuperSensorProcessor_v05052021.so|2c9204b230bddd089070e5b9238c85b9fe6d94f8
+product/lib64/libSuperSensor_v05052021.so|dfbfc247087c8f9dfc86401918c8026b06eaf4a5
 product/lib64/libtensorflowlite_gpu_delegate.so|821bcbece27d47c49daac00a65fdf48213befad1
+product/lib64/libtensorflowlite.so|17f94dc427220788db8f10d658d3a330488ac7d6
 
 # Moto Permissions
-product/etc/permissions/com.motorola.camera3.berlin.xml:vendor/etc/permissions/com.motorola.camera3.berlin.xml
+product/etc/permissions/com.motorola.camera3.berlna.xml:vendor/etc/permissions/com.motorola.camera3.berlna.xml
 product/etc/permissions/com.motorola.camera3.content.ai.xml:vendor/etc/permissions/com.motorola.camera3.content.ai.xml
 product/etc/permissions/com.motorola.camera3.lens.xml:vendor/etc/permissions/com.motorola.camera3.lens.xml
 product/etc/permissions/com.motorola.camera3.xml:vendor/etc/permissions/com.motorola.camera3.xml
@@ -512,11 +517,7 @@ vendor/bin/STFlashTool
 
 # NFC - configs
 vendor/etc/libnfc-hal-st.conf
-vendor/etc/libnfc-mtp-SN100.conf
-vendor/etc/libnfc-mtp-SN100_38_4MHZ.conf
 vendor/etc/libnfc-nci-st.conf
-vendor/etc/libnfc-qrd-SN100.conf
-vendor/etc/libnfc-qrd-SN100_38_4MHZ.conf
 vendor/etc/st21nfc_conf_ds.txt
 vendor/etc/st21nfc_conf_ss.txt
 
@@ -533,10 +534,15 @@ vendor/lib64/sensors.ssc.so
 
 # Sensor - configs
 vendor/etc/sensors/config/ak991x_0.json
+vendor/etc/sensors/config/bmp5_0.json
+vendor/etc/sensors/config/icm4x6xx.json
+vendor/etc/sensors/config/icp101xx.json
+vendor/etc/sensors/config/icp201xx_0.json
 vendor/etc/sensors/config/kodiak_default_sensors.json
 vendor/etc/sensors/config/kodiak_dynamic_sensors.json
 vendor/etc/sensors/config/kodiak_irq.json
 vendor/etc/sensors/config/kodiak_power_0.json
+vendor/etc/sensors/config/lps22hh_0.json
 vendor/etc/sensors/config/lsm6dso_0.json
 vendor/etc/sensors/config/mmc5603x_0.json
 vendor/etc/sensors/config/mot_camgest.json
@@ -575,9 +581,7 @@ vendor/etc/sensors/config/sns_tilt_sw_disabled.json
 vendor/etc/sensors/config/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
 vendor/etc/sensors/config/sns_wrist_pedo.json
-vendor/etc/sensors/config/stk3a5x_0_always.json
-vendor/etc/sensors/config/stk3a5x_0_emerald_always.json
-vendor/etc/sensors/config/stk3a5x_0_white_always.json
+vendor/etc/sensors/config/stk3a5x_0.json
 vendor/etc/sensors/proto/als_mastercal.proto
 vendor/etc/sensors/proto/descriptor.proto
 vendor/etc/sensors/proto/mot_barocal.proto
@@ -673,14 +677,14 @@ vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
 
 # Thermal engine - configs
-vendor/etc/thermal-engine-berlin.conf
+vendor/etc/thermal-engine-berlna.conf
 vendor/etc/thermal-engine.conf
 
 # Touchscreen firmware
-vendor/firmware/csot_stm_fts_production_limits.csv
-vendor/firmware/stmicro-csot-fts3639-21120227-de141027-berlin.ftb
-vendor/firmware/stmicro-visionox-fts3639-21072312-0009200c-berlin.ftb
-vendor/firmware/visionox_stm_fts_production_limits.csv
+vendor/firmware/mp-novatek_ts-NT36675-21061805-603a-berlna.bin
+vendor/firmware/novatek_ts-NT36675-21042101-603a-berlna-evt.bin
+vendor/firmware/novatek_ts-NT36675-21061805-603a-berlna.bin
+vendor/firmware/NT36xxx_MP_Setting_Criteria_603A.csv
 
 # Vibrator firmware
 vendor/firmware/aw8695_haptic.bin
@@ -716,8 +720,6 @@ vendor/firmware/aw8695_rtp_Modular.bin
 vendor/firmware/aw8695_rtp_Momentum.bin
 vendor/firmware/aw8695_rtp_Morning.bin
 vendor/firmware/aw8695_rtp_Moto.bin
-vendor/firmware/aw8695_rtp_Moto_Original.bin
-vendor/firmware/aw8695_rtp_Moto_Retro.bin
 vendor/firmware/aw8695_rtp_Natural.bin
 vendor/firmware/aw8695_rtp_New_Player.bin
 vendor/firmware/aw8695_rtp_Now_or_Never.bin
