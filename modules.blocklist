@@ -99,5 +99,8 @@ blocklist utags
 #
 # Motorola product module block list
 #
+
+blocklist goodix_fod_mmi
+blocklist ets_fps_mmi
 blocklist camera
 blocklist aw8695

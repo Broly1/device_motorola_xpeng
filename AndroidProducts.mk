@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_berlin.mk
+    $(LOCAL_DIR)/lineage_berlna.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_berlin-user \
-    lineage_berlin-userdebug \
-    lineage_berlin-eng
+    lineage_berlna-user \
+    lineage_berlna-userdebug \
+    lineage_berlna-eng

@@ -33,9 +33,9 @@ $(call inherit-product, device/motorola/sm7325-common/sm7325.mk)
 
 # Overlay
 PRODUCT_PACKAGES += \
-    FrameworksResBerlin \
-    LineageSystemUIBerlin \
-    SystemUIResBerlin
+    FrameworksResBerlna \
+    LineageSystemUIBerlna \
+    SystemUIResBerlna
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -49,11 +49,12 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.berlin
+    android.hardware.biometrics.fingerprint@2.1-service.berlna
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/idc/uinput_nav.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput_nav.idc \
-    $(LOCAL_PATH)/configs/keylayout/uinput_nav.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput_nav.kl
+$(foreach f,$(wildcard $(LOCAL_PATH)/configs/idc/*.idc),\
+        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/usr/idc/$(notdir $f)))
+$(foreach f,$(wildcard $(LOCAL_PATH)/configs/keylayout/*.kl),\
+        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/$(notdir $f)))
 
 # Init
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
@@ -65,7 +66,7 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 
 # Lineage Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.berlin
+    vendor.lineage.touch@1.0-service.berlna
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -90,4 +91,4 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/berlin/berlin-vendor.mk)
+$(call inherit-product, vendor/motorola/berlna/berlna-vendor.mk)

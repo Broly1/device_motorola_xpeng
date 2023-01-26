@@ -8,7 +8,7 @@
 
 set -e
 
-export DEVICE=berlin
+export DEVICE=berlna
 export DEVICE_COMMON=sm7325-common
 export VENDOR=motorola
 

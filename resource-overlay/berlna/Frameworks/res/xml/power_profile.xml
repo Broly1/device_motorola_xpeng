@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
     <item name="none">0</item>
-    <item name="screen.on">139.28</item>
-    <item name="screen.full">155.5</item>
-    <item name="wifi.on">0.9</item>
+    <item name="screen.on">79.683</item>
+    <item name="screen.full">393.32</item>
+    <item name="wifi.on">1.293</item>
     <item name="wifi.active">34.36</item>
     <item name="wifi.scan">4.73</item>
     <item name="camera.avg">523.93</item>
     <item name="camera.flashlight">200.75</item>
     <item name="gps.on">171</item>
     <item name="radio.active">86.278</item>
-    <item name="radio.scanning">10.57</item>
+    <item name="radio.scanning">33.2</item>
     <array name="radio.on">
         <value>33.079</value>
         <value>30</value>
@@ -100,7 +100,7 @@
     <item name="cpu.cluster_power.cluster1">1.13</item>
     <item name="cpu.cluster_power.cluster1">1.13</item>
     <item name="cpu.suspend">5.5</item>
-    <item name="cpu.idle">15.86</item>
-    <item name="cpu.active">5.79</item>
-    <item name="battery.capacity">4000</item>
+    <item name="cpu.idle">22.71</item>
+    <item name="cpu.active">6.9</item>
+    <item name="battery.capacity">5000</item>
 </device>

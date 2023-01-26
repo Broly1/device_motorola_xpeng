@@ -13,9 +13,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.berlin",
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.berlin.xml"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.berlin.rc"],
+    name: "android.hardware.biometrics.fingerprint@2.1-service.berlna",
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.berlna.xml"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.berlna.rc"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     srcs: ["service.cpp", "BiometricsFingerprint.cpp"],

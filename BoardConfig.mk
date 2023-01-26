@@ -14,23 +14,23 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/motorola/berlin
+DEVICE_PATH := device/motorola/berlna
 
 # Inherit from motorola sm7325-common
 include device/motorola/sm7325-common/BoardConfigCommon.mk
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := berlin
+TARGET_BOOTLOADER_BOARD_NAME := berlna
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # HIDL
-DEVICE_MANIFEST_YUPIK_FILES += $(DEVICE_PATH)/manifest_berlin.xml
+DEVICE_MANIFEST_YUPIK_FILES += $(DEVICE_PATH)/manifest_berlna.xml
 
 # Kernel
-BOARD_KERNEL_CMDLINE += androidboot.hab.product=berlin
-TARGET_KERNEL_CONFIG += vendor/lineage_berlin.config
+BOARD_KERNEL_CMDLINE += androidboot.hab.product=berlna
+TARGET_KERNEL_CONFIG += vendor/lineage_berlna.config
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
@@ -39,14 +39,14 @@ BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVIC
 BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 
 # Partitions
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 102247673856
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 237371371520
 ifneq ($(WITH_GMS),true)
 BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1073741824
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 898367488
 BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 1073741824
 endif
-BOARD_MOT_DP_GROUP_SIZE := 7109345280
-BOARD_SUPER_PARTITION_SIZE := 14227079168
+BOARD_MOT_DP_GROUP_SIZE := 7916748800
+BOARD_SUPER_PARTITION_SIZE := 15854469120
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/double_click"
@@ -59,7 +59,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security
-VENDOR_SECURITY_PATCH := 2022-11-01
+VENDOR_SECURITY_PATCH := 2023-01-01
 
 # inherit from the proprietary version
-include vendor/motorola/berlin/BoardConfigVendor.mk
+include vendor/motorola/berlna/BoardConfigVendor.mk
