@@ -6,3 +6,4 @@ sensors_class.ko
 mmi_relay.ko
 touchscreen_mmi.ko
 nova_0flash_mmi.ko
+aw8695.ko
