@@ -1,0 +1,20 @@
+[
+  {
+    "repository" : "kernel_motorola_sm7325",
+    "target_path" : "kernel/motorola/sm7325",
+    "remote" : "pixel-devices",
+    "branch" : "thirteen"
+  },
+  {
+    "repository": "vendor_motorola_xpeng",
+    "target_path": "vendor/motorola/xpeng",
+    "remote": "pixel-devices-blobs",
+    "branch": "thirteen"
+  },
+  {
+    "repository": "hardware_motorola",
+    "target_path": "hardware/motorola",
+    "remote": "pixel",
+    "branch" : "thirteen"
+  }
+]
