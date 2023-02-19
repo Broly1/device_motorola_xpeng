@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_xpeng.mk
+    $(LOCAL_DIR)/aosp_xpeng.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_xpeng-user \
-    lineage_xpeng-userdebug \
-    lineage_xpeng-eng
+    aosp_xpeng-user \
+    aosp_xpeng-userdebug \
+    aosp_xpeng-eng
