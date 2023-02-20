@@ -26,6 +26,9 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 # Next Gen Assistant
 TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 
+# # Recovery
+TARGET_USES_AOSP_RECOVERY := true
+
 PRODUCT_NAME := aosp_xpeng
 PRODUCT_DEVICE := xpeng
 PRODUCT_MANUFACTURER := motorola
