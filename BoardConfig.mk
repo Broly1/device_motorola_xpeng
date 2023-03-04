@@ -17,7 +17,8 @@ DEVICE_MANIFEST_YUPIK_FILES += $(DEVICE_PATH)/manifest_xpeng.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hab.product=xpeng
-TARGET_KERNEL_CONFIG += vendor/aosp_xpeng.config
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+TARGET_KERNEL_CONFIG += vendor/lineage_xpeng.config
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
