@@ -42,6 +42,7 @@ on post-fs-data
     # Param updater data for various modules
     mkdir /data/vendor/param 0775 system system
     mkdir /data/vendor/tzstorage/goodix 0770 system system
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules wlan
 
 on early-boot
     # Goodix fingerprint

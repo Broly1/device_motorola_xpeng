@@ -75,7 +75,6 @@ tda18212.ko
 mxl5007t.ko
 slimbus-ngd.ko
 mt2131.ko
-wlan.ko
 rmnet_core.ko
 rmnet_ctl.ko
 rmnet_offload.ko
