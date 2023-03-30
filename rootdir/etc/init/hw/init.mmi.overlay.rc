@@ -11,15 +11,12 @@ on early-init
     insmod /vendor/lib/modules/bm_adsp_ulog.ko
     insmod /vendor/lib/modules/camera.ko
     insmod /vendor/lib/modules/cci_intf.ko
-    insmod /vendor/lib/modules/fpc1020_mmi.ko
-    insmod /vendor/lib/modules/goodix_fod_mmi.ko
     insmod /vendor/lib/modules/leds_aw99703.ko
     insmod /vendor/lib/modules/leds_lm3697.ko
     insmod /vendor/lib/modules/mmi_charger.ko
     insmod /vendor/lib/modules/mmi_sys_temp.ko
     insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
     insmod /vendor/lib/modules/qti_glink_charger.ko
-    insmod /vendor/lib/modules/rbs_fps_mmi.ko
     insmod /vendor/lib/modules/wl2866d.ko
 
 on post-fs
