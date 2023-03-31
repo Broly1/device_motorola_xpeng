@@ -663,3 +663,7 @@ vendor/etc/thermal-engine.conf
 vendor/firmware/NT36xxx_MP_Setting_Criteria_6044.csv
 vendor/firmware/mp_novatek_ts-NT36675-21101302-6044-xpeng.bin
 vendor/firmware/novatek_ts-NT36675-21101302-6044-xpeng.bin
+
+# Touchscreen firmware (for recovery)
+vendor/firmware/mp_novatek_ts-NT36675-21101302-6044-xpeng.bin:recovery/root/vendor/firmware/mp_novatek_ts-NT36675-21101302-6044-xpeng.bin
+vendor/firmware/novatek_ts-NT36675-21101302-6044-xpeng.bin:recovery/root/vendor/firmware/novatek_ts-NT36675-21101302-6044-xpeng.bin
