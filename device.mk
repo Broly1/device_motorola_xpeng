@@ -27,11 +27,9 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 $(call inherit-product, device/motorola/sm7325-common/sm7325.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 PRODUCT_PACKAGES += \
     FrameworksResXpeng \
+    LineagePlatformXpeng \
     LineageSystemUIXpeng \
     SettingsProviderResXpeng \
     SystemUIResXpeng
