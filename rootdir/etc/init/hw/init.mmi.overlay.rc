@@ -83,21 +83,21 @@ service capsense_reset /system/vendor/bin/capsense_reset
 on property:sys.boot_completed=1
     start capsense_reset
 
-service egis_ident /vendor/bin/hw/egis_ident
+service egis_ident /vendor/bin/egis_ident
     class late_start
     user system
     group system
     oneshot
     disabled
 
-service fpc_ident /vendor/bin/hw/fpc_ident
+service fpc_ident /vendor/bin/fpc_ident
     class late_start
     user system
     group system
     oneshot
     disabled
 
-service gf_ident /vendor/bin/hw/goodix_ident
+service gf_ident /vendor/bin/goodix_ident
     class late_start
     user system
     group system input uhid
