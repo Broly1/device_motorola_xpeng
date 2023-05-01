@@ -76,10 +76,6 @@ PRODUCT_PACKAGES += \
     init.recovery.xpeng.rc \
     load_touch.sh
 
-# Lineage Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xpeng
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.xpeng
