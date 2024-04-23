@@ -26,6 +26,10 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Inherit from motorola sm7325-common
 $(call inherit-product, device/motorola/sm7325-common/common.mk)
 
+# Overlay-evolution
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-evolution \
+
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResXpeng \
