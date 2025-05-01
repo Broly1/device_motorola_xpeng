@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_xpeng.mk
+    $(LOCAL_DIR)/pixelage_xpeng.mk
