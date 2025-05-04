@@ -84,6 +84,9 @@ TARGET_USES_MOTCAMERA4 := true
 
 $(call inherit-product, vendor/motorola/MotCamera4-lahaina/motcamera4.mk)
 
+# Moto Time Weather
+$(call inherit-product, vendor/motorola/TimeWeather/timeweather.mk)
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service.st \
